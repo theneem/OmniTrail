@@ -1,0 +1,39 @@
+<!-- Generated template for the SearchHeaderComponent component -->
+<div>
+  
+  <ion-card no-padding >
+    <ion-card-content class="text-sm" >
+
+  <ion-grid no-padding>
+    <ion-row no-padding float-middle >
+      <ion-col col-1  no-padding >
+        
+        <label class="SubText"> Map
+          <input type="checkbox" (click)="ngIfCtrl()" >
+          <div class="track1">
+            <div class="handle"></div>
+          </div>
+       </label>
+      </ion-col>
+      <ion-col col-11 no-padding >
+                    
+
+        <ion-searchbar class="SubText" placeholder="{{strSecName}}" animated *ngIf="hide"></ion-searchbar>    
+
+
+        <div class="form-group">
+        <ion-select interface="popover" *ngIf="!hide" class="selector"  placeholder="Within..."  >Select
+          <ion-option *ngFor="let within of LWithin" [value]=within.id> {{within.value}} </ion-option>
+          
+        </ion-select>
+</div>
+      </ion-col>
+      
+
+    </ion-row>
+  </ion-grid>
+  </ion-card-content>
+  </ion-card>
+
+
+</div>

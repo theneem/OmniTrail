@@ -1,0 +1,101 @@
+
+<ion-content padding class="common-bg no-scroll">
+
+
+    <div class="trip card"  margin-top>
+        <div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + relheader.thumb + ')'}">
+          <div class="background-filter rlt">
+            <div class="align-bottom" padding-left padding-right>
+              <h6 class="pull-right text-white " ion-text>Saints of {{ relheader.name }}</h6>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <search-header SecName="Saint"></search-header>
+
+      
+      <ion-grid no-padding>
+        <ion-row no-padding>
+          <ion-col col-12 *ngFor="let saint of saints">
+<!-- left image card -->
+            <ion-card no-padding >
+              <ion-card-content class="text-sm" tappable (click)="gotoSaint()">
+                <ion-grid>
+                  <ion-row no-padding>
+                    <ion-col col-1>
+                      <img class="imgborder" src="../../assets/img/saint/{{saint.SaintIMG}}"> 
+                      <div class="NormalText" >Birth Date:  {{saint.BirthDate}} </div>
+                      <div class="NormalText" >Sent Date:  {{saint.BirthDate}} </div>
+                      <div *ngIf="saint.DeathDate != null" class="NormalText"   >Death Date:  {{saint.DeathDate}} </div>
+                    </ion-col> 
+                    <ion-col col-11>
+                      <div class="HeadText" > {{saint.SaintName}} </div>
+                      <div >&nbsp;</div>
+                      <div class="SubText"  >{{saint.ReligionName}} ::  {{saint.SectName}} ::  {{saint.Samudai}}  </div>
+                      <div >&nbsp;</div>
+                      
+                      <div class="SubText"  >   {{saint.SaintDesc}} </div>
+                     
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-10 >
+                      
+                    </ion-col>
+                    <ion-col col-2 >
+                      <div class="HeadText" tappable (click)="gotoSaint()"   > More....</div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+
+              </ion-card-content>
+            </ion-card>  
+
+
+
+            <!-- right  image card -->
+            <ion-card no-padding >
+              <ion-card-content class="text-sm" tappable (click)="gotoSaint()">
+                <ion-grid>
+                  <ion-row no-padding>
+                    <ion-col col-11>
+                      <div class="HeadText" > {{saint.SaintName}} </div>
+                      <div >&nbsp;</div>
+                      
+                      <div class="SubText" >{{saint.ReligionName}} ::  {{saint.SectName}} ::  {{saint.Samudai}}  </div>
+                      <div >&nbsp;</div>
+                      
+                      <div class="SubText"  >   {{saint.SaintDesc}} </div>
+                     
+                    </ion-col>
+                    <ion-col col-1>
+                      <img class="imgborder" src="../../assets/img/saint/{{saint.SaintIMG}}"> 
+                      <div class="NormalText" >Birth Date:  {{saint.BirthDate}} </div>
+                      <div class="NormalText" >Sent Date:  {{saint.BirthDate}} </div>
+                      <div *ngIf="saint.DeathDate != null" class="NormalText"   >Death Date:  {{saint.DeathDate}} </div>
+                    </ion-col> 
+
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-10 >
+                      
+                    </ion-col>
+                    <ion-col col-2 >
+                      <div class="HeadText" tappable (click)="gotoSaint()"   > More....</div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+
+              </ion-card-content>
+            </ion-card>  
+
+
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+</ion-content>

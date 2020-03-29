@@ -1,0 +1,51 @@
+
+<ion-content padding class="common-bg no-scroll"> 
+ 
+
+  
+  <div class="trip card"  margin-top>
+    <div class="background border-bottom" [ngStyle]="{'background-image': 'url(assets/img/banner/' + this.global.GlobalRelImg + ')'}"  >
+      <div class="background-filter rlt">
+        <div class="align-bottom" padding-left padding-right>
+          <h6 class="pull-right text-white " ion-text>God of {{this.global.GlobalRelName}} </h6>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+<search-header SecName="God"></search-header>
+
+  <ion-grid no-padding>
+    <ion-row no-padding>
+      <ion-col col-12 *ngFor="let god of gods">
+        <ion-card no-padding >
+          <ion-card-content class="text-sm" tappable (click)="gotoSaint()">
+            <ion-grid>
+              <ion-row no-padding>
+                <ion-col col-3>
+                  <img src="../../assets/img/saint.jpg"> 
+                </ion-col> 
+                  <ion-col col-9>
+                  <div class="NormalText" > god name  </div> <!-- {{god.name}} -->
+                  <div class="NormalText" >   God Description </div>
+                 
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-12>
+                  <div class="NormalText" > Saint : Type, Gachha, Samudai </div>
+                  <div class="NormalText" > More....</div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>  
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  
+</ion-content>

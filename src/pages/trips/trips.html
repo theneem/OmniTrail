@@ -1,0 +1,98 @@
+<!-- -->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      <span ion-text>Relisant OmniTrail  </span>
+    </ion-title>
+    
+    <ion-buttons end>
+
+
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      <button ion-button tappable (click)="goToAccount()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content padding class="trips detail-bg  no-scroll">
+  <!--list of trips-->
+  <div class="trip card" *ngFor="let religion of religions" tappable (click)="viewDetail(religion.ReligionID,religion.ReligionName,religion.headerimg)" margin-bottom>
+    <div class="background border-bottom" [ngStyle]="{'background-image': 'url(assets/img/banner/' + religion.headerimg + ')'}">
+      <div class="background-filter rlt">
+        <div class="align-bottom" padding-left padding-right>
+          <h6 class="pull-left text-white " ion-text>{{ religion.ReligionName }}</h6>
+          <h6 class="pull-right text-white" ion-text><ion-icon name="book" class="text-white"></ion-icon>  {{ religion.primarybook}}</h6>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class=" primary-bg">
+
+        <ion-grid>
+            <ion-row  justify-content-center align-items-center>
+                <ion-col   justify-content-center >
+                    <span  ion-text color="light">
+                    <ion-icon name="home" class="text-white"></ion-icon>
+                    <span ion-text class="text-white"> Temple:</span>
+                      </span>
+                  </ion-col>
+                <ion-col   justify-content-center >
+
+                    <span ion-text color="light">
+                        <ion-icon name="globe" class="text-white"></ion-icon>
+                        <span ion-text class="text-white">God:</span>
+                      </span>
+                </ion-col>
+                <ion-col   justify-content-center >
+      
+                    <span ion-text color="light">
+                        <ion-icon name="person" class="text-white"></ion-icon>
+                        <span ion-text class="text-white">Saint:</span>
+                      </span>            
+                  </ion-col>
+            </ion-row>
+
+            <ion-row  justify-content-center align-items-center>
+                <ion-col   justify-content-center >
+                    <span  ion-text color="light">
+                   
+                    <span ion-text class="text-white"> {{ religion.noofgod }}</span>
+                      </span>
+                  </ion-col>
+                <ion-col   justify-content-center >
+
+                    <span ion-text color="light">
+                        
+                        <span ion-text class="text-white">{{ religion.nooftemple }}</span>
+                      </span>
+                </ion-col>
+                <ion-col   justify-content-center >
+      
+                    <span ion-text color="light">
+                        
+                        <span ion-text class="text-white">{{ religion.noofsaint }}</span>
+                      </span>            
+                  </ion-col>
+            </ion-row>
+            
+        </ion-grid>
+     
+
+
+
+      
+    </div>
+  </div>
+</ion-content>
